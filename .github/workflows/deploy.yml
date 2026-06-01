@@ -26,8 +26,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: portfolio-jade/package-lock.json
 
       - name: Install dependencies
         working-directory: portfolio-jade
@@ -36,6 +34,9 @@ jobs:
       - name: Build Angular application
         working-directory: portfolio-jade
         run: npm run build -- --configuration production
+
+      - name: Display build output
+        run: ls -R portfolio-jade/dist
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
