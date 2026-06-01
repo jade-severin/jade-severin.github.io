@@ -1,0 +1,35 @@
+<div class="lightbox-backdrop" (click)="onClose()">
+  <div class="lightbox" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="onClose()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- VIDEO -->
+
+    <video *ngIf="media.type === 'video'" [src]="media.src" controls autoplay playsinline></video>
+
+    <!-- IMAGE -->
+
+    <img *ngIf="media.type === 'image'" [src]="media.src" [alt]="media.title" />
+
+    <!-- PDF -->
+
+    <iframe *ngIf="media.type === 'pdf'" [src]="media.src"> </iframe>
+
+    <div class="info">
+      <h2>
+        {{ media.title }}
+      </h2>
+
+      <p *ngIf="media.description">
+        {{ media.description }}
+      </p>
+
+      <div class="tags" *ngIf="media.tags?.length">
+        <span class="tag" *ngFor="let tag of media.tags">
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

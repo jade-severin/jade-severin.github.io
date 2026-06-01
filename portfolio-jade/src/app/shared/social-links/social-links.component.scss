@@ -1,0 +1,16 @@
+.socials {
+
+  display: flex;
+
+  gap: 1rem;
+
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+
+  .socials {
+
+    justify-content: flex-start;
+  }
+}
