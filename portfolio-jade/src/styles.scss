@@ -307,3 +307,22 @@ app-root {
   position: relative;
   z-index: 1;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#projets {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* CRUCIAL : empêche que le titre soit collé en haut */
+#projects-anchor {
+  scroll-margin-top: 4rem;
+}
