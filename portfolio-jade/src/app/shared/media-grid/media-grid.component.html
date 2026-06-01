@@ -1,0 +1,8 @@
+<section class="media-grid">
+  @for (item of items; track item.title) {
+    <app-media-card [data]="item" (open)="open(item)"> </app-media-card>
+  }
+</section>
+
+<app-media-lightbox *ngIf="selectedMedia" [media]="selectedMedia" (close)="close()">
+</app-media-lightbox>

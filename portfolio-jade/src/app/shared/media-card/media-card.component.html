@@ -1,0 +1,43 @@
+<article class="media-card" (click)="onOpen()">
+  <div class="media">
+    <div class="overlay">
+      <i class="fa-solid fa-expand"></i>
+    </div>
+
+    <!-- VIDEO -->
+
+    @if (isVideo()) {
+      <video [src]="data.src" muted></video>
+    }
+
+    <!-- IMAGE -->
+    @if (isImage()) {
+      <img [src]="data.src" [alt]="data.title" />
+    }
+
+    <!-- PDF -->
+    @if (isPdf()) {
+      <div class="pdf-preview">
+        <i class="fa-solid fa-file-pdf"></i>
+      </div>
+    }
+  </div>
+
+  <div class="content">
+    <h3>
+      {{ data.title }}
+    </h3>
+
+    <p *ngIf="data.description">
+      {{ data.description }}
+    </p>
+
+    @if (data.tags?.length) {
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of data.tags">
+          {{ tag }}
+        </span>
+      </div>
+    }
+  </div>
+</article>
