@@ -1,8 +1,8 @@
 import { MediaCardData } from '../../shared/media-card/media-card.component';
 
-export const MEDIA_ITEMS: MediaCardData[] = [
+export const VIDEOS_PROMO: MediaCardData[] = [
   {
-    id: 'video-001',
+    id: 'promo-001',
     type: 'video',
     title: 'Brut(es)',
     orientation: 'portrait',
@@ -11,7 +11,7 @@ export const MEDIA_ITEMS: MediaCardData[] = [
     tags: ['Promotion', "Piano'cktail"],
   },
   {
-    id: 'video-002',
+    id: 'promo-002',
     type: 'video',
     title: 'La vie rêvée',
     orientation: 'portrait',
@@ -20,7 +20,7 @@ export const MEDIA_ITEMS: MediaCardData[] = [
     tags: ['Promotion', "Piano'cktail"],
   },
   {
-    id: 'video-003',
+    id: 'promo-003',
     type: 'video',
     title: 'Lubiana',
     orientation: 'portrait',
@@ -28,10 +28,50 @@ export const MEDIA_ITEMS: MediaCardData[] = [
     vimeoUrl: 'https://player.vimeo.com/video/1197712069',
     tags: ['Promotion', "Piano'cktail"],
   },
+];
+export const VIDEOS_EQUIPE: MediaCardData[] = [
+  {
+    id: 'equipe-001',
+    type: 'video',
+    title: 'On aurait pu vous dévoiler...',
+    orientation: 'portrait',
+    thumbnail: 'thumbnails/avril_thumbnail.jpg',
+    vimeoUrl: 'https://player.vimeo.com/video/1197712474',
+    tags: ["Vie d'équipe", "Piano'cktail"],
+  },
+  {
+    id: 'equipe-002',
+    type: 'video',
+    title: 'Vous ! Bien sûr !',
+    orientation: 'portrait',
+    thumbnail: 'thumbnails/devinez_thumbnail.jpg',
+    vimeoUrl: 'https://player.vimeo.com/video/1197712475',
+    tags: ["Vie d'équipe", "Piano'cktail"],
+  },
+  {
+    id: 'equipe-003',
+    type: 'video',
+    title: 'Un bonbon ou une place',
+    orientation: 'portrait',
+    thumbnail: 'thumbnails/fantome_thumbnail.jpg',
+    vimeoUrl: 'https://player.vimeo.com/video/1197712476',
+    tags: ["Vie d'équipe", "Piano'cktail"],
+  },
+  {
+    id: 'equipe-004',
+    type: 'video',
+    title: 'Livraison de danseurs chauds bouillants !',
+    orientation: 'portrait',
+    thumbnail: 'thumbnails/mug_thumbnail.jpg',
+    vimeoUrl: 'https://player.vimeo.com/video/1197712477',
+    tags: ["Vie d'équipe", "Piano'cktail"],
+  },
+];
+export const DOC_PLAQUETTE: MediaCardData[] = [
   {
     id: 'plaquette-001',
     type: 'pdf',
-    title: 'Plaquette Pianocktail 2025-26',
+    title: "Plaquette Piano'cktail 2025-26",
     orientation: 'landscape',
     thumbnail: 'plaquette_25_thumbnail.jpg',
     calameoUrl: 'https://www.calameo.com/read/007956311a7ecd2fbe4af',

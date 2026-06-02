@@ -2,6 +2,15 @@
   <div class="lightbox-overlay">
     <div class="lightbox-backdrop" (click)="onClose()"></div>
 
+    <button
+      class="close-button"
+      type="button"
+      aria-label="Fermer"
+      (click)="onClose(); $event.stopPropagation()"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
     <div class="lightbox-content">
       @if (isLoading) {
         <div class="loader"></div>

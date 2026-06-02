@@ -1,9 +1,24 @@
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+}
+
 .lightbox-backdrop {
   position: absolute;
   inset: 0;
 
   background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .lightbox {
@@ -17,78 +32,98 @@
 
   border-radius: var(--radius-lg);
 
-  background: var(--surface);
+  background: rgba(27, 29, 34, 0.92);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 
   border: 1px solid var(--border);
 
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
-}
 
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-
-  z-index: 99999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2;
 }
 
 .lightbox-content {
   position: relative;
 
-  z-index: 2;
-
-  max-width: 90vw;
-  max-height: 90vh;
-
   display: flex;
+  flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
-  img,
-  video {
-    max-width: 100%;
-    max-height: 85vh;
-
-    border-radius: 12px;
-  }
+  max-width: 90vw;
+  max-height: 90vh;
 }
+
+.lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 85vh;
+
+  border-radius: 16px;
+}
+
+/* ====================================
+   VIDEO
+==================================== */
 
 .lightbox-video {
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   width: 100%;
+}
+
+.lightbox-video iframe {
+  border: none;
+
+  border-radius: 24px;
+
+  background: black;
+
+  display: block;
 }
 
 .portrait-video iframe {
   width: min(90vw, 450px);
 
   aspect-ratio: 9 / 16;
-
-  border: none;
-
-  border-radius: 24px;
-
-  background: black;
 }
 
 .landscape-video iframe {
   width: min(95vw, 1200px);
 
   aspect-ratio: 16 / 9;
+}
+
+/* ====================================
+   CALAMEO
+==================================== */
+
+.calameo-frame {
+  width: min(1200px, 95vw);
+
+  height: 80vh;
 
   border: none;
 
-  border-radius: 24px;
+  border-radius: 20px;
+
+  background: white;
 }
 
+/* ====================================
+   INFOS
+==================================== */
+
 .info {
+  width: 100%;
+
   padding: 1.5rem;
 }
 
@@ -106,33 +141,59 @@
   margin-top: 1rem;
 }
 
-.close-btn {
-  position: absolute;
+/* ====================================
+   CLOSE BUTTON
+==================================== */
+
+.close-button {
+  position: fixed;
 
   top: 1rem;
-
   right: 1rem;
 
-  width: 48px;
-
-  height: 48px;
+  width: 52px;
+  height: 52px;
 
   border-radius: 50%;
 
-  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(20, 20, 22, 0.55);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   color: white;
 
-  z-index: 10;
+  z-index: 100000;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.calameo-frame {
-  width: 100%;
-  height: 70vh;
+.close-button:hover {
+  transform: scale(1.05);
 
-  border: none;
-  border-radius: 12px;
+  background: rgba(17, 18, 20, 0.9);
+
+  border-color: rgba(255, 255, 255, 0.15);
 }
+
+.close-button i {
+  font-size: 1.5rem;
+
+  line-height: 1;
+}
+
+/* ====================================
+   LOADER
+==================================== */
 
 .loader {
   width: 60px;
@@ -146,6 +207,7 @@
 
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -153,5 +215,41 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ====================================
+   MOBILE
+==================================== */
+
+@media (max-width: 768px) {
+  .lightbox-overlay {
+    padding: 0.75rem;
+  }
+
+  .lightbox {
+    width: 100%;
+
+    max-height: calc(100vh - 1.5rem);
+  }
+
+  .portrait-video iframe {
+    width: min(100%, 420px);
+  }
+
+  .calameo-frame {
+    height: 70vh;
+  }
+
+  .close-button {
+    width: 56px;
+    height: 56px;
+
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .close-button i {
+    font-size: 1.7rem;
   }
 }

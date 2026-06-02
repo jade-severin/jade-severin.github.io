@@ -23,7 +23,7 @@ export class HeroComponent {
 
     if (event.deltaY <= 0) return;
 
-    const anchor = this.document.getElementById('projects-anchor');
+    const anchor = this.document.getElementById('promo-anchor');
     if (!anchor) return;
 
     event.preventDefault();
@@ -41,7 +41,7 @@ export class HeroComponent {
   }
 
   scrollToProjects(): void {
-    const anchor = this.document.getElementById('projects-anchor');
+    const anchor = this.document.getElementById('promo-anchor');
     if (!anchor) return;
 
     anchor.scrollIntoView({

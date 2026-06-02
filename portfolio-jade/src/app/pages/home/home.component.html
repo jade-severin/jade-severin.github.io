@@ -1,18 +1,31 @@
 <app-hero />
 
-<section id="projects" class="section">
-  <!-- ANCRE DE SNAP -->
-  <div id="projects-anchor"></div>
+<app-side-nav />
 
-  <div class="container">
-    <app-section-title
-      title="Projets"
-      subtitle="Communication culturelle, théâtre, événements et contenus digitaux"
-    >
-    </app-section-title>
+<section id="promo" class="section content-section">
+  <div id="promo-anchor"></div>
+
+  <section class="container">
+    <app-section-title title="Vidéos" subtitle="Promotion de spectacles"> </app-section-title>
 
     <div class="media-grid">
-      <app-media-grid [items]="mediaItems"> </app-media-grid>
+      <app-media-grid [items]="videosPromo" title="Promotion des spectacles"> </app-media-grid>
     </div>
-  </div>
+  </section>
+</section>
+
+<section id="equipe" class="section content-section">
+  <section class="container">
+    <app-section-title title="Valorisation des équipes"> </app-section-title>
+
+    <app-media-grid [items]="videosEquipe" title="Valorisation des équipes"> </app-media-grid>
+  </section>
+</section>
+
+<section id="plaquette" class="section content-section">
+  <section class="container">
+    <app-section-title title="Plaquettes"> </app-section-title>
+
+    <app-media-grid [items]="docPlaquette" title="Documents"> </app-media-grid>
+  </section>
 </section>

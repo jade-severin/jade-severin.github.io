@@ -1,0 +1,15 @@
+<nav class="side-nav">
+  @for (section of sections; track section.id) {
+    <button
+      class="nav-dot"
+      [class.active]="activeSection === section.id"
+      (click)="scrollTo(section.id)"
+    >
+      <span class="dot"></span>
+
+      <span class="label">
+        {{ section.label }}
+      </span>
+    </button>
+  }
+</nav>
