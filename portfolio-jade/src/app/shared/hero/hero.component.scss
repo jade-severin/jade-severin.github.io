@@ -1,7 +1,10 @@
 .hero-section {
   min-height: 100vh;
+
   position: relative;
+
   display: flex;
+
   align-items: center;
 }
 
@@ -13,16 +16,12 @@
   align-items: center;
 }
 
-.portrait-wrapper {
-  display: flex;
+.hero-portrait {
+  position: relative;
 
-  justify-content: center;
-}
-
-.portrait {
   width: 100%;
 
-  max-width: 380px;
+  max-width: 420px;
 
   aspect-ratio: 4 / 5;
 
@@ -30,19 +29,75 @@
 
   border-radius: 32px;
 
-  border: 1px solid var(--border);
-
   background: var(--surface);
 
+  border: 1px solid var(--border);
+
   box-shadow: var(--shadow-soft);
+
+  isolation: isolate;
 }
 
-.portrait img {
+.hero-portrait img {
+  position: relative;
+
+  z-index: 0;
+
   width: 100%;
 
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
+
+  object-position: center 10%;
+
+  filter: brightness(1.03) contrast(1.08) saturate(1.08);
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.hero-portrait:hover img {
+  transform: scale(1.03);
+
+  filter: brightness(1.05) contrast(1.1) saturate(1.12);
+}
+
+/* Halo cuivre inspiré des cheveux */
+
+.hero-portrait::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background: radial-gradient(circle at top right, rgba(216, 116, 47, 0.1), transparent 60%);
+
+  mix-blend-mode: screen;
+}
+
+/* Léger voile théâtral */
+
+.hero-portrait::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background: linear-gradient(to top, rgba(17, 18, 20, 0.22), transparent 45%);
 }
 
 .content {
@@ -79,30 +134,21 @@
   font-size: 1.1rem;
 }
 
-@media (min-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 420px 1fr;
-  }
-
-  .content {
-    text-align: left;
-  }
-
-  .content p {
-    margin-inline: 0;
-  }
-}
-
 .scroll-indicator {
   position: absolute;
+
   left: 50%;
+
   bottom: 1.5rem;
 
   transform: translateX(-50%);
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   gap: 0.5rem;
 
   cursor: pointer;
@@ -128,20 +174,42 @@
   0% {
     transform: translateX(-50%) translateY(0);
   }
+
   50% {
     transform: translateX(-50%) translateY(8px);
   }
+
   100% {
     transform: translateX(-50%) translateY(0);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .hero-portrait {
+    max-width: 320px;
+
+    margin-inline: auto;
+  }
+
   .scroll-indicator {
     bottom: 0.75rem;
   }
 
   .scroll-indicator span {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 420px 1fr;
+  }
+
+  .content {
+    text-align: left;
+  }
+
+  .content p {
+    margin-inline: 0;
   }
 }

@@ -35,7 +35,7 @@
    (PAS de variable souris ici → évite conflit transform)
 ===================================================== */
 
-@keyframes floatA {
+@keyframes floatAYellow {
   0% {
     transform: scale(1) translate(0, 0);
     opacity: 0.1;
@@ -43,7 +43,7 @@
 
   50% {
     transform: scale(1.5) translate(30px, -25px);
-    opacity: 0.18;
+    opacity: 0.14;
   }
 
   100% {
@@ -52,7 +52,7 @@
   }
 }
 
-@keyframes floatB {
+@keyframes floatBCyan {
   0% {
     transform: scale(1) translate(0, 0);
     opacity: 0.08;
@@ -60,7 +60,7 @@
 
   50% {
     transform: scale(1.05) translate(-25px, 35px);
-    opacity: 0.15;
+    opacity: 0.21;
   }
 
   100% {
@@ -69,20 +69,20 @@
   }
 }
 
-@keyframes floatC {
+@keyframes floatCBlue {
   0% {
     transform: scale(1) translate(0, 0);
-    opacity: 0.06;
+    opacity: 0.11;
   }
 
   50% {
     transform: scale(1.12) translate(40px, 20px);
-    opacity: 0.13;
+    opacity: 0.26;
   }
 
   100% {
     transform: scale(1) translate(0, 0);
-    opacity: 0.06;
+    opacity: 0.11;
   }
 }
 
@@ -91,33 +91,26 @@
 ===================================================== */
 
 .blob-yellow {
-  top: -200px;
-
-  left: -250px;
-
+  top: -15%;
+  right: -10%;
   background: var(--yellow);
-
-  animation: floatA 26s ease-in-out infinite;
+  animation: floatAYellow 26s ease-in-out infinite;
 }
 
 .blob-cyan {
-  top: 15%;
-
-  right: -150px;
-
+  bottom: -20%;
+  left: -10%;
   background: var(--cyan);
 
-  animation: floatB 30s ease-in-out infinite;
+  animation: floatBCyan 30s ease-in-out infinite;
 }
 
 .blob-blue {
-  bottom: -350px;
-
-  left: 20%;
-
+  top: 45%;
+  left: 40%;
   background: var(--blue);
 
-  animation: floatC 34s ease-in-out infinite;
+  animation: floatCBlue 34s ease-in-out infinite;
 }
 
 /* =====================================================

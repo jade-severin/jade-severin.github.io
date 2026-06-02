@@ -1,35 +1,45 @@
-<div class="lightbox-backdrop" (click)="onClose()">
-  <div class="lightbox" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="onClose()">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
+@if (item) {
+  <div class="lightbox-overlay">
+    <div class="lightbox-backdrop" (click)="onClose()"></div>
 
-    <!-- VIDEO -->
+    <div class="lightbox-content">
+      @if (isLoading) {
+        <div class="loader"></div>
+      } @else {
+        @if (isImage(item)) {
+          <img [src]="item.url" [alt]="item.title" />
+        } @else if (isVimeoVideo()) {
+          <div
+            class="lightbox-video"
+            [class.portrait-video]="item.orientation === 'portrait'"
+            [class.landscape-video]="item.orientation === 'landscape'"
+          >
+            <iframe
+              [src]="item.vimeoUrl! | safeUrl"
+              title="Vimeo player"
+              frameborder="0"
+              allow="
+                autoplay;
+                fullscreen;
+                picture-in-picture;
+                clipboard-write;
+                encrypted-media;
+                web-share;
+              "
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        } @else if (isPdf(item)) {
+          <div class="pdf-viewer">
+            <h2>{{ item.title }}</h2>
 
-    <video *ngIf="media.type === 'video'" [src]="media.src" controls autoplay playsinline></video>
-
-    <!-- IMAGE -->
-
-    <img *ngIf="media.type === 'image'" [src]="media.src" [alt]="media.title" />
-
-    <!-- PDF -->
-
-    <iframe *ngIf="media.type === 'pdf'" [src]="media.src"> </iframe>
-
-    <div class="info">
-      <h2>
-        {{ media.title }}
-      </h2>
-
-      <p *ngIf="media.description">
-        {{ media.description }}
-      </p>
-
-      <div class="tags" *ngIf="media.tags?.length">
-        <span class="tag" *ngFor="let tag of media.tags">
-          {{ tag }}
-        </span>
-      </div>
+            @if (item.calameoUrl) {
+              <iframe class="calameo-frame" [src]="item.calameoUrl | safeUrl"> </iframe>
+            }
+          </div>
+        }
+      }
     </div>
   </div>
-</div>
+}

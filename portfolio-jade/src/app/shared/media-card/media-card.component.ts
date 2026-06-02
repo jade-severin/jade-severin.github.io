@@ -5,15 +5,25 @@ import { CommonModule } from '@angular/common';
 export type MediaType = 'video' | 'image' | 'pdf';
 
 export interface MediaCardData {
-  type: MediaType;
+  id: string;
 
   title: string;
 
   description?: string;
 
-  src: string;
+  category?: string;
 
-  thumbnail?: string;
+  type: MediaType;
+
+  orientation: 'portrait' | 'landscape';
+
+  thumbnail: string;
+
+  url?: string;
+
+  vimeoUrl?: string;
+
+  calameoUrl?: string;
 
   tags?: string[];
 }
@@ -46,5 +56,13 @@ export class MediaCardComponent {
 
   isPdf(): boolean {
     return this.data.type === 'pdf';
+  }
+
+  isPortrait(): boolean {
+    return this.data.orientation === 'portrait';
+  }
+
+  isLandscape(): boolean {
+    return this.data.orientation === 'landscape';
   }
 }
