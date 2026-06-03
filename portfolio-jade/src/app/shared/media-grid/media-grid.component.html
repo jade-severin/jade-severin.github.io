@@ -6,7 +6,7 @@
       </button>
     }
 
-    <div #track class="rail-track">
+    <div #track class="rail-track" (scroll)="onTrackScroll()">
       @for (item of items; track item.id) {
         <div class="rail-item">
           <app-media-card [data]="item" (open)="open(item)"> </app-media-card>

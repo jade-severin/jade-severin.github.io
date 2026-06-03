@@ -1,3 +1,4 @@
+import { CampaignVisual } from '../../shared/couv-bts/couv-bts.component';
 import { MediaCardData } from '../../shared/media-card/media-card.component';
 
 export const VIDEOS_PROMO: MediaCardData[] = [
@@ -70,6 +71,22 @@ export const VIDEOS_EQUIPE: MediaCardData[] = [
     tags: ["Vie d'équipe", "Piano'cktail"],
   },
 ];
+
+export const COUV_BTS: CampaignVisual[] = [
+  {
+    cover: 'photo_plaquette1.jpg',
+    backstage: 'jade_makeup.jpg',
+    title: "Couverture Plaquette Piano'cktail 2026-2027",
+    role: 'Coiffure & maquillage',
+  },
+  {
+    cover: 'photo_plaquette2.jpg',
+    backstage: 'jade_coiffure.jpg',
+    title: 'Couverture alternative',
+    role: 'Coiffure & maquillage',
+  },
+];
+
 export const DOC_PLAQUETTE: MediaCardData[] = [
   {
     id: 'plaquette-001',

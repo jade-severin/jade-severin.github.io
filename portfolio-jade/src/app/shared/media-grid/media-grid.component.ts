@@ -1,10 +1,12 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostListener,
   input,
   Input,
+  NgZone,
   ViewChild,
 } from '@angular/core';
 
@@ -46,8 +48,10 @@ export class MediaGridComponent implements AfterViewInit {
     });
 
     this.resizeObserver.observe(this.track.nativeElement);
+  }
 
-    this.track.nativeElement.addEventListener('scroll', () => this.updateArrows());
+  onTrackScroll(): void {
+    this.updateArrows();
   }
 
   scrollLeft(): void {

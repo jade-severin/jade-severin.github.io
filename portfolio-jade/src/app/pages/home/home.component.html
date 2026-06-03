@@ -39,6 +39,8 @@
     >
     </app-section-title>
 
+    <app-couv-bts [visuals]="campaignVisuals"></app-couv-bts>
+
     <div class="desktop-calameo">
       <iframe class="calameo-embed" [src]="calameoEmbedUrl | safeUrl" allowfullscreen> </iframe>
     </div>
@@ -47,4 +49,8 @@
       <app-media-grid [items]="docPlaquette"> </app-media-grid>
     </div>
   </div>
+</section>
+
+<section class="credentials">
+  <p>Site réalisé avec amour par mon grand frère</p>
 </section>

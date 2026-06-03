@@ -33,3 +33,15 @@
     display: block;
   }
 }
+
+.credentials {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.credentials p {
+  color: --muted;
+  opacity: 60%;
+}

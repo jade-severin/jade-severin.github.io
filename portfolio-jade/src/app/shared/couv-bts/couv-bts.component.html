@@ -1,0 +1,47 @@
+<section class="campaign-visuals">
+  @for (visual of visuals; track visual.cover) {
+    <article class="visual-card">
+      <div class="image-container">
+        <!-- VERSION MOBILE -->
+
+        <div class="mobile-slider">
+          <div class="slide">
+            <img class="cover-image" [src]="visual.cover" [alt]="visual.title" />
+          </div>
+
+          <div class="slide">
+            <img class="backstage-image" [src]="visual.backstage" [alt]="visual.role" />
+          </div>
+        </div>
+
+        <!-- VERSION DESKTOP -->
+
+        <div class="desktop-reveal">
+          <img class="backstage-image" [src]="visual.backstage" [alt]="visual.role" />
+
+          <div class="cover-layer">
+            <img class="cover-image" [src]="visual.cover" [alt]="visual.title" />
+          </div>
+        </div>
+
+        <div class="overlay">
+          <span class="badge"> Behind the scene </span>
+
+          <div class="meta">
+            <h3>
+              {{ visual.title }}
+            </h3>
+
+            <p>
+              {{ visual.role }}
+            </p>
+          </div>
+
+          <div class="swipe-hint">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+        </div>
+      </div>
+    </article>
+  }
+</section>

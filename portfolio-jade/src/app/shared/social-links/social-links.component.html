@@ -1,14 +1,22 @@
 <div class="socials">
-  <a class="social-link" href="https://www.instagram.com/calamityjadexo/" target="_blank">
+  <a class="social-link" [href]="instagramUrl" target="_blank">
     <i class="fa-brands fa-instagram"> </i>
+    <span class="label">instagram Piano'cktail</span>
   </a>
 
-  <a class="social-link" href="https://fr.linkedin.com/in/jade-severin-com-culture" target="_blank">
+  <a class="social-link" [href]="linkedInUrl" target="_blank">
     <i class="fa-brands fa-linkedin-in"> </i>
+    <span class="label">linkedIn</span>
   </a>
 
-  <a class="social-link" href="mailto:severinjade@gmail.com">
+  <a class="social-link" target="_blank" href="mailto:severinjade@gmail.com">
     <i class="fa-solid fa-envelope"> </i>
+    <span class="label">email</span>
+  </a>
+
+  <a class="social-link" target="_blank" [href]="cvUrl">
+    <i class="fa-solid fa-file-lines"> </i>
+    <span class="label">CV</span>
   </a>
 
   <!-- <a class="social-link" href="https://tiktok.com" target="_blank">
