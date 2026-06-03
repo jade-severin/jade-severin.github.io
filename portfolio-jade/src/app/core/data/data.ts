@@ -33,7 +33,8 @@ export const VIDEOS_EQUIPE: MediaCardData[] = [
   {
     id: 'equipe-001',
     type: 'video',
-    title: 'On aurait pu vous dévoiler...',
+    title:
+      'On aurait pu vous dévoiler la programmation d’avril hier… mais on a préféré éviter toute confusion',
     orientation: 'portrait',
     thumbnail: 'thumbnails/avril_thumbnail.jpg',
     vimeoUrl: 'https://player.vimeo.com/video/1197712474',
@@ -42,7 +43,8 @@ export const VIDEOS_EQUIPE: MediaCardData[] = [
   {
     id: 'equipe-002',
     type: 'video',
-    title: 'Vous ! Bien sûr !',
+    title:
+      'Vous ! Bien sûr 😇 Le spectacle est presque complet donc nous savons que vous serez au rendez-vous',
     orientation: 'portrait',
     thumbnail: 'thumbnails/devinez_thumbnail.jpg',
     vimeoUrl: 'https://player.vimeo.com/video/1197712475',
@@ -51,7 +53,8 @@ export const VIDEOS_EQUIPE: MediaCardData[] = [
   {
     id: 'equipe-003',
     type: 'video',
-    title: 'Un bonbon ou une place',
+    title:
+      'Un bonbon ou une place de spectacle ! 🎃 L’ambiance n’est pas si calme que ça pendant les vacances',
     orientation: 'portrait',
     thumbnail: 'thumbnails/fantome_thumbnail.jpg',
     vimeoUrl: 'https://player.vimeo.com/video/1197712476',

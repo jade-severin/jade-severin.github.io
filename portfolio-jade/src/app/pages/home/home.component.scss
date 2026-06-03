@@ -1,0 +1,35 @@
+.desktop-calameo {
+  display: block;
+
+  margin-top: 2rem;
+}
+
+.calameo-embed {
+  width: 100%;
+
+  height: min(900px, 85vh);
+
+  border: none;
+
+  border-radius: var(--radius-lg);
+
+  background: white;
+
+  box-shadow: var(--shadow-soft);
+
+  overflow: hidden;
+}
+
+.mobile-calameo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-calameo {
+    display: none;
+  }
+
+  .mobile-calameo {
+    display: block;
+  }
+}

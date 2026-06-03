@@ -1,4 +1,12 @@
-import { Component, input, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  input,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
@@ -13,11 +21,63 @@ import { MediaLightboxComponent } from '../media-lightbox/media-lightbox.compone
   templateUrl: './media-grid.component.html',
   styleUrl: './media-grid.component.scss',
 })
-export class MediaGridComponent {
+export class MediaGridComponent implements AfterViewInit {
   @Input({ required: true })
   items: MediaCardData[] = [];
 
   selectedMedia: MediaCardData | null = null;
+
+  @ViewChild('track')
+  track!: ElementRef<HTMLDivElement>;
+
+  private resizeObserver?: ResizeObserver;
+
+  canScrollLeft = false;
+
+  canScrollRight = true;
+
+  ngAfterViewInit(): void {
+    requestAnimationFrame(() => {
+      this.updateArrows();
+    });
+
+    this.resizeObserver = new ResizeObserver(() => {
+      this.updateArrows();
+    });
+
+    this.resizeObserver.observe(this.track.nativeElement);
+
+    this.track.nativeElement.addEventListener('scroll', () => this.updateArrows());
+  }
+
+  scrollLeft(): void {
+    this.track.nativeElement.scrollBy({
+      left: -500,
+      behavior: 'smooth',
+    });
+
+    this.scheduleArrowUpdate();
+  }
+
+  scrollRight(): void {
+    this.track.nativeElement.scrollBy({
+      left: 500,
+      behavior: 'smooth',
+    });
+
+    this.scheduleArrowUpdate();
+  }
+
+  private updateArrows(): void {
+    const element = this.track.nativeElement;
+
+    const tolerance = 30;
+
+    this.canScrollLeft = element.scrollLeft > tolerance;
+
+    this.canScrollRight =
+      element.scrollLeft < element.scrollWidth - element.clientWidth - tolerance;
+  }
 
   open(media: MediaCardData): void {
     this.selectedMedia = media;
@@ -25,5 +85,23 @@ export class MediaGridComponent {
 
   close(): void {
     this.selectedMedia = null;
+  }
+
+  private scheduleArrowUpdate(): void {
+    requestAnimationFrame(() => {
+      this.updateArrows();
+
+      setTimeout(() => {
+        this.updateArrows();
+      }, 150);
+
+      setTimeout(() => {
+        this.updateArrows();
+      }, 350);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.resizeObserver?.disconnect();
   }
 }

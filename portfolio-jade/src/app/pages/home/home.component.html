@@ -1,31 +1,50 @@
-<app-hero />
-
 <app-side-nav />
 
-<section id="promo" class="section content-section">
-  <div id="promo-anchor"></div>
+<section id="hero">
+  <app-hero />
+</section>
 
+<section id="promo" class="section">
+  <div id="promo-anchor"></div>
   <section class="container">
-    <app-section-title title="Vidéos" subtitle="Promotion de spectacles"> </app-section-title>
+    <app-section-title
+      title="Promotion de projets"
+      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
+    >
+    </app-section-title>
 
     <div class="media-grid">
-      <app-media-grid [items]="videosPromo" title="Promotion des spectacles"> </app-media-grid>
+      <app-media-grid [items]="videosPromo"> </app-media-grid>
     </div>
   </section>
 </section>
 
-<section id="equipe" class="section content-section">
+<section id="equipe" class="section">
   <section class="container">
-    <app-section-title title="Valorisation des équipes"> </app-section-title>
+    <app-section-title
+      title="Valorisation des équipes"
+      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
+    >
+    </app-section-title>
 
-    <app-media-grid [items]="videosEquipe" title="Valorisation des équipes"> </app-media-grid>
+    <app-media-grid [items]="videosEquipe"> </app-media-grid>
   </section>
 </section>
 
-<section id="plaquette" class="section content-section">
-  <section class="container">
-    <app-section-title title="Plaquettes"> </app-section-title>
+<section id="plaquette" class="section">
+  <div class="container">
+    <app-section-title
+      title="Plaquettes"
+      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
+    >
+    </app-section-title>
 
-    <app-media-grid [items]="docPlaquette" title="Documents"> </app-media-grid>
-  </section>
+    <div class="desktop-calameo">
+      <iframe class="calameo-embed" [src]="calameoEmbedUrl | safeUrl" allowfullscreen> </iframe>
+    </div>
+
+    <div class="mobile-calameo">
+      <app-media-grid [items]="docPlaquette"> </app-media-grid>
+    </div>
+  </div>
 </section>

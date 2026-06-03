@@ -1,37 +1,138 @@
-.media-grid {
+.rail-wrapper {
   position: relative;
+}
 
-  z-index: 10;
+.media-rail {
+  width: 100%;
+}
 
-  display: grid;
+.rail-title {
+  margin-bottom: 1.5rem;
+}
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.rail-track {
+  display: flex;
 
   gap: 1.5rem;
 
-  align-items: stretch;
+  overflow-x: auto;
 
-  padding-block: 2rem;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+
+  padding-bottom: 1rem;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 }
 
-/* =========================
-   TABLET
-========================= */
+.rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-item {
+  flex: 0 0 calc((100% - 3rem) / 3);
+
+  scroll-snap-align: start;
+}
 
 @media (max-width: 1024px) {
-  .media-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .rail-item {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
+@media (max-width: 768px) {
+  .rail-item {
+    flex: 0 0 100%;
+  }
+}
 
-@media (max-width: 640px) {
-  .media-grid {
-    grid-template-columns: 1fr;
+.nav-arrow {
+  position: absolute;
 
-    gap: 1rem;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(20, 20, 22, 0.55);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(17, 18, 20, 0.9);
+
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.left {
+  left: -24px;
+}
+
+.left::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -40px;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+.right {
+  right: -24px;
+}
+
+.right::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -40px;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+.nav-arrow i {
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
   }
 }

@@ -17,6 +17,10 @@ interface NavSection {
 export class SideNavComponent implements AfterViewInit {
   sections: NavSection[] = [
     {
+      id: 'hero',
+      label: 'Contacts',
+    },
+    {
       id: 'promo',
       label: 'Promotion',
     },
