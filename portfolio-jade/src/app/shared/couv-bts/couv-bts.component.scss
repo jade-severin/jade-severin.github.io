@@ -147,7 +147,30 @@
 }
 
 .swipe-hint {
-  display: none;
+  display: flex;
+
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  font-size: 0.9rem;
+
+  z-index: 10;
 }
 
 /* ====================================
@@ -205,32 +228,5 @@
     object-fit: cover;
 
     display: block;
-  }
-
-  .swipe-hint {
-    display: flex;
-
-    position: absolute;
-
-    top: 1rem;
-    right: 1rem;
-
-    width: 40px;
-    height: 40px;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 999px;
-
-    background: rgba(0, 0, 0, 0.45);
-
-    backdrop-filter: blur(10px);
-
-    color: white;
-
-    font-size: 0.9rem;
-
-    z-index: 10;
   }
 }

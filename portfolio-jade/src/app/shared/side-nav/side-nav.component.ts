@@ -32,6 +32,10 @@ export class SideNavComponent implements AfterViewInit {
       id: 'plaquette',
       label: 'Plaquette',
     },
+    {
+      id: 'site',
+      label: 'Sites',
+    },
   ];
 
   activeSection = 'promo';

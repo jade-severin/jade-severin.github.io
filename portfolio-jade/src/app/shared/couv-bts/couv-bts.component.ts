@@ -1,11 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-export interface CampaignVisual {
-  cover: string;
-  backstage: string;
-  title: string;
-  role: string;
-}
+import { CampaignVisual } from '../../core/models/models';
 
 @Component({
   selector: 'app-couv-bts',

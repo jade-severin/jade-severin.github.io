@@ -1,0 +1,169 @@
+.section-title {
+  position: relative;
+
+  margin-bottom: 3rem;
+
+  isolation: isolate;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  position: relative;
+
+  margin: 0;
+
+  display: inline-block;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  line-height: 1;
+
+  z-index: 2;
+}
+
+h2::before {
+  content: '';
+
+  position: absolute;
+
+  // inset: -1rem -2rem;
+  inset: -0.5rem -1rem;
+
+  z-index: -1;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.06), transparent 5%);
+
+  filter: blur(12px);
+}
+
+p {
+  margin-top: 1rem;
+
+  max-width: 720px;
+
+  color: var(--muted);
+}
+
+/* ====================================
+   BRUSH STROKE
+==================================== */
+
+.brush-stroke {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 100vw;
+
+  transform: translate(-50%, -50%) rotate(var(--brush-angle));
+
+  height: clamp(120px, 12vw, 180px);
+
+  background: var(--brush-gradient);
+
+  opacity: 0.72;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  clip-path: polygon(
+    0% 46%,
+    6% 42%,
+    14% 48%,
+    22% 44%,
+    31% 51%,
+    40% 45%,
+    49% 53%,
+    58% 47%,
+    67% 54%,
+    76% 46%,
+    85% 52%,
+    93% 45%,
+    100% 49%,
+    100% 63%,
+    94% 58%,
+    86% 64%,
+    77% 57%,
+    68% 65%,
+    58% 58%,
+    49% 66%,
+    39% 57%,
+    30% 64%,
+    20% 56%,
+    10% 62%,
+    0% 55%
+  );
+}
+
+.brush-stroke::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background: inherit;
+
+  opacity: 0.35;
+
+  mix-blend-mode: screen;
+
+  clip-path: polygon(
+    0% 52%,
+    10% 48%,
+    20% 56%,
+    32% 49%,
+    44% 58%,
+    56% 50%,
+    68% 60%,
+    80% 52%,
+    90% 58%,
+    100% 54%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+/*
+ * Texture irrégulière
+ */
+.brush-stroke::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.35), transparent 35%),
+    radial-gradient(circle at 35% 40%, rgba(255, 255, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.25), transparent 35%);
+
+  mix-blend-mode: screen;
+
+  opacity: 0.6;
+}
+
+/* ====================================
+   RESPONSIVE
+==================================== */
+
+@media (max-width: 768px) {
+  .brush-stroke {
+    height: 48px;
+
+    filter: blur(12px);
+  }
+}

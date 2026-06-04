@@ -1,32 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-
-export type MediaType = 'video' | 'image' | 'pdf';
-
-export interface MediaCardData {
-  id: string;
-
-  title: string;
-
-  description?: string;
-
-  category?: string;
-
-  type: MediaType;
-
-  orientation: 'portrait' | 'landscape';
-
-  thumbnail: string;
-
-  url?: string;
-
-  vimeoUrl?: string;
-
-  calameoUrl?: string;
-
-  tags?: string[];
-}
+import { MediaCardData } from '../../core/models/models';
 
 @Component({
   selector: 'app-media-card',

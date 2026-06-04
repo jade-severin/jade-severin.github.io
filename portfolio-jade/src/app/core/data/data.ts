@@ -1,5 +1,4 @@
-import { CampaignVisual } from '../../shared/couv-bts/couv-bts.component';
-import { MediaCardData } from '../../shared/media-card/media-card.component';
+import { MediaCardData, CampaignVisual, EditorialPublication } from '../models/models';
 
 export const VIDEOS_PROMO: MediaCardData[] = [
   {
@@ -77,13 +76,11 @@ export const COUV_BTS: CampaignVisual[] = [
     cover: 'photo_plaquette1.jpg',
     backstage: 'jade_makeup.jpg',
     title: "Couverture Plaquette Piano'cktail 2026-2027",
-    role: 'Coiffure & maquillage',
   },
   {
     cover: 'photo_plaquette2.jpg',
     backstage: 'jade_coiffure.jpg',
     title: 'Couverture alternative',
-    role: 'Coiffure & maquillage',
   },
 ];
 
@@ -96,5 +93,20 @@ export const DOC_PLAQUETTE: MediaCardData[] = [
     thumbnail: 'plaquette_25_thumbnail.jpg',
     calameoUrl: 'https://www.calameo.com/read/007956311a7ecd2fbe4af',
     tags: ['presse'],
+  },
+];
+
+export const PLAQUETTES: EditorialPublication[] = [
+  {
+    title: "Plaquette Piano'cktail 2025-2026",
+    year: '2025',
+
+    calameoUrl: 'https://www.calameo.com/read/007956311a7ecd2fbe4af',
+
+    description:
+      // "Conception de la campagne visuelle, coiffure et maquillage du shooting photo, accompagnement artistique et valorisation de l'identité de saison.",
+      "Texte expliquant ce j'ai fait dessus où synthétisant la démarche",
+
+    reverse: false,
   },
 ];

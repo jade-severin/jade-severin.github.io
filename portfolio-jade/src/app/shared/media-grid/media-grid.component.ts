@@ -12,9 +12,10 @@ import {
 
 import { CommonModule } from '@angular/common';
 
-import { MediaCardComponent, MediaCardData } from '../media-card/media-card.component';
+import { MediaCardComponent } from '../media-card/media-card.component';
 
 import { MediaLightboxComponent } from '../media-lightbox/media-lightbox.component';
+import { MediaCardData } from '../../core/models/models';
 
 @Component({
   selector: 'app-media-grid',

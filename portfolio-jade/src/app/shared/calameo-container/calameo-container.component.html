@@ -1,0 +1,21 @@
+@for (publication of publications(); track publication.title) {
+  <article class="publication" [class.reverse]="publication.reverse">
+    <div class="publication-viewer">
+      <iframe [src]="publication.calameoUrl | safeUrl" loading="lazy" allowfullscreen> </iframe>
+    </div>
+
+    <div class="publication-content">
+      <span class="year">
+        {{ publication.year }}
+      </span>
+
+      <h3>
+        {{ publication.title }}
+      </h3>
+
+      <p>
+        {{ publication.description }}
+      </p>
+    </div>
+  </article>
+}

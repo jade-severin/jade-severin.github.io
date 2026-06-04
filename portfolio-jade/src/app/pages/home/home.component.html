@@ -41,13 +41,19 @@
 
     <app-couv-bts [visuals]="campaignVisuals"></app-couv-bts>
 
-    <div class="desktop-calameo">
-      <iframe class="calameo-embed" [src]="calameoEmbedUrl | safeUrl" allowfullscreen> </iframe>
-    </div>
+    <app-calameo-container [publications]="plaquettes"></app-calameo-container>
+  </div>
+</section>
 
-    <div class="mobile-calameo">
-      <app-media-grid [items]="docPlaquette"> </app-media-grid>
-    </div>
+<section id="site" class="section">
+  <div class="container">
+    <app-section-title
+      title="Sites"
+      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
+    >
+    </app-section-title>
+
+    <p>Sites internet</p>
   </div>
 </section>
 

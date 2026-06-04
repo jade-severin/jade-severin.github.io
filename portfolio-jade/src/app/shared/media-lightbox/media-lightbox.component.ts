@@ -10,9 +10,8 @@ import {
 
 import { CommonModule } from '@angular/common';
 
-import { MediaCardData } from '../media-card/media-card.component';
-
 import { SafeUrlPipe } from '../../shared/pipes/safe-url.pipe';
+import { MediaCardData } from '../../core/models/models';
 
 @Component({
   selector: 'app-media-lightbox',
