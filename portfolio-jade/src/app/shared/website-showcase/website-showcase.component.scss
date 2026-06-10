@@ -1,0 +1,253 @@
+.website-showcase {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8rem;
+}
+
+.project {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 480px);
+
+  gap: 4rem;
+
+  align-items: center;
+}
+
+.project.reverse {
+  grid-template-columns: minmax(320px, 480px) minmax(0, 1.4fr);
+}
+
+.project.reverse .visual {
+  order: 2;
+}
+
+.project.reverse .content {
+  order: 1;
+}
+
+/* ====================================
+   VISUAL
+==================================== */
+
+.visual {
+  position: relative;
+}
+
+.visual picture {
+  display: block;
+}
+
+.visual img {
+  width: 100%;
+
+  display: block;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project:hover .visual img {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ====================================
+   CONTENT
+==================================== */
+
+.content {
+  position: relative;
+
+  padding: 2rem;
+
+  border-radius: var(--radius-lg);
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(10px);
+}
+
+.client {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.content h3 {
+  margin: 0 0 1rem;
+
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+
+  line-height: 1.1;
+}
+
+.content p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+.challenge {
+  margin-top: 1.5rem;
+}
+
+.challenge-label {
+  display: inline-block;
+
+  margin-bottom: 0.75rem;
+
+  padding: 0.35rem 0.75rem;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: var(--orange);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.challenge h4 {
+  margin: 0 0 1rem;
+
+  font-size: 1.35rem;
+
+  line-height: 1.3;
+}
+
+.challenge p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+.missions {
+  margin: 2rem 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+}
+
+.missions li {
+  padding: 0.45rem 0.85rem;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 0.85rem;
+}
+
+/* ====================================
+   CTA
+==================================== */
+
+.cta {
+  margin-top: 2rem;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  color: white;
+}
+
+.cta i {
+  font-size: 0.9rem;
+}
+
+/* ====================================
+   TABLET
+==================================== */
+
+@media (max-width: 1024px) {
+  .project,
+  .project.reverse {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .project.reverse .visual,
+  .project.reverse .content {
+    order: initial;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+/* ====================================
+   MOBILE
+==================================== */
+
+@media (max-width: 768px) {
+  .website-showcase {
+    gap: 4rem;
+  }
+
+  .content h3 {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .missions {
+    gap: 0.5rem;
+  }
+
+  .missions li {
+    font-size: 0.8rem;
+  }
+}

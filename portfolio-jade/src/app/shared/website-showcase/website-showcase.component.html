@@ -1,0 +1,55 @@
+<section class="website-showcase">
+  @for (project of projects; track project.title; let even = $even) {
+    <article class="project" [class.reverse]="!even">
+      <div class="visual">
+        <picture>
+          <source media="(max-width: 768px)" [srcset]="project.mobileImage" />
+
+          <source media="(max-width: 1200px)" [srcset]="project.tabletImage" />
+
+          <img [src]="project.desktopImage" [alt]="project.title" loading="lazy" />
+        </picture>
+      </div>
+
+      <div class="content">
+        @if (project.client) {
+          <span class="client">
+            {{ project.client }}
+          </span>
+        }
+
+        <h3>
+          {{ project.title }}
+        </h3>
+
+        <div class="challenge">
+          <span class="challenge-label"> Enjeu </span>
+
+          <h4>
+            {{ project.challenge.question }}
+          </h4>
+
+          <p>
+            {{ project.challenge.answer }}
+          </p>
+        </div>
+
+        @if (project.missions?.length) {
+          <ul class="missions">
+            @for (mission of project.missions; track mission) {
+              <li>
+                {{ mission }}
+              </li>
+            }
+          </ul>
+        }
+
+        <a class="cta" [href]="project.url" target="_blank" rel="noopener noreferrer">
+          Visiter le site
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </article>
+  }
+</section>

@@ -5,6 +5,7 @@ import {
   PLAQUETTES,
   VIDEOS_EQUIPE,
   VIDEOS_PROMO,
+  WEBSITES,
 } from '../../core/data/data';
 import { CalameoContainerComponent } from '../../shared/calameo-container/calameo-container.component';
 import { CouvBtsComponent } from '../../shared/couv-bts/couv-bts.component';
@@ -16,6 +17,7 @@ import { TextPromoComponent } from '../../shared/text-promo/text-promo.component
 import { TextEquipeComponent } from '../../shared/text-equipe/text-equipe.component';
 import { TextPlaquetteComponent } from '../../shared/text-plaquette/text-plaquette.component';
 import { TextPlaquetteRedactionComponent } from '../../shared/text-plaquette-redaction/text-plaquette-redaction.component';
+import { WebsiteShowcaseComponent } from '../../shared/website-showcase/website-showcase.component';
 
 @Component({
   standalone: true,
@@ -31,6 +33,7 @@ import { TextPlaquetteRedactionComponent } from '../../shared/text-plaquette-red
     TextEquipeComponent,
     TextPlaquetteComponent,
     TextPlaquetteRedactionComponent,
+    WebsiteShowcaseComponent,
   ],
 
   templateUrl: './home.component.html',
@@ -42,6 +45,7 @@ export class HomeComponent {
   protected docPlaquette = DOC_PLAQUETTE;
   protected campaignVisuals = COUV_BTS;
   protected plaquettes = PLAQUETTES;
+  protected websites = WEBSITES;
 
   protected calameoEmbedUrl = 'https://v.calameo.com/?bkcode=007956311a7ecd2fbe4af';
 

@@ -41,7 +41,7 @@ export class HeroComponent {
   }
 
   scrollToProjects(): void {
-    const anchor = this.document.getElementById('promo-anchor');
+    const anchor = this.document.getElementById('promo');
     if (!anchor) return;
 
     anchor.scrollIntoView({
