@@ -1,25 +1,37 @@
 <div class="socials">
-  <a class="social-link" [href]="instagramUrl" target="_blank">
+  <a class="social-link" [href]="instagramUrl" role="link" target="_blank">
     <i class="fa-brands fa-instagram"> </i>
     <span class="label">instagram Piano'cktail</span>
   </a>
 
-  <a class="social-link" [href]="linkedInUrl" target="_blank">
+  <a class="social-link" [href]="linkedInUrl" role="link" target="_blank">
     <i class="fa-brands fa-linkedin-in"> </i>
     <span class="label">linkedIn</span>
   </a>
 
-  <a class="social-link" target="_blank" href="mailto:severinjade@gmail.com">
-    <i class="fa-solid fa-envelope"> </i>
-    <span class="label">email</span>
+  <a class="social-link" role="button" tabindex="0" (click)="copyEmail()">
+    <i class="fa-solid fa-envelope"></i>
+    <span class="label"> email </span>
   </a>
 
-  <a class="social-link" target="_blank" [href]="cvUrl">
+  <a class="social-link" target="_blank" role="link" [href]="cvUrl">
     <i class="fa-solid fa-file-lines"> </i>
     <span class="label">CV</span>
   </a>
-
-  <!-- <a class="social-link" href="https://tiktok.com" target="_blank">
-    <i class="fa-brands fa-tiktok"> </i>
-  </a> -->
 </div>
+
+@if (showToast()) {
+  <div class="copy-toast" [class.hide]="hidingToast()">
+    <div class="toast-icon">
+      <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div class="toast-content">
+      <span class="toast-title"> Adresse copiée </span>
+
+      <span class="toast-subtitle">
+        {{ email }}
+      </span>
+    </div>
+  </div>
+}
