@@ -4,6 +4,19 @@
   margin-top: 2rem;
 }
 
+.description {
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.column {
+  columns: 2;
+}
+
 .calameo-embed {
   width: 100%;
 
@@ -27,6 +40,10 @@
 @media (max-width: 768px) {
   .desktop-calameo {
     display: none;
+  }
+
+  .column {
+    columns: 1;
   }
 
   .mobile-calameo {

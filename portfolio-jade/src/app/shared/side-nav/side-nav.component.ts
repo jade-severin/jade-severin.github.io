@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
@@ -38,29 +38,48 @@ export class SideNavComponent implements AfterViewInit {
     },
   ];
 
-  activeSection = 'promo';
+  activeSection = 'hero';
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.activeSection = entry.target.id;
-          }
-        });
-      },
-      {
-        threshold: 0.35,
-      },
-    );
+    this.updateActiveSection();
+  }
 
-    this.sections.forEach((section) => {
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.updateActiveSection();
+  }
+
+  private updateActiveSection(): void {
+    if (window.scrollY < 100) {
+      this.activeSection = 'hero';
+      return;
+    }
+
+    const triggerLine = window.innerHeight * 0.35;
+
+    let currentSection = this.sections[0].id;
+
+    for (const section of this.sections) {
       const element = document.getElementById(section.id);
 
-      if (element) {
-        observer.observe(element);
+      if (!element) {
+        continue;
       }
-    });
+
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top <= triggerLine) {
+        currentSection = section.id;
+      }
+    }
+
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 20;
+
+    if (nearBottom) {
+      currentSection = this.sections[this.sections.length - 1].id;
+    }
+
+    this.activeSection = currentSection;
   }
 
   scrollTo(id: string): void {

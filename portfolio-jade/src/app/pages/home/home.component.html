@@ -5,14 +5,9 @@
 </section>
 
 <section id="promo" class="section">
-  <div id="promo-anchor"></div>
   <section class="container">
-    <app-section-title
-      title="Promotion de projets"
-      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
-    >
-    </app-section-title>
-
+    <app-section-title title="Promotion de projets"> </app-section-title>
+    <app-text-promo></app-text-promo>
     <div class="media-grid">
       <app-media-grid [items]="videosPromo"> </app-media-grid>
     </div>
@@ -21,37 +16,25 @@
 
 <section id="equipe" class="section">
   <section class="container">
-    <app-section-title
-      title="Valorisation des équipes"
-      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
-    >
-    </app-section-title>
-
+    <app-section-title title="Valorisation des équipes"> </app-section-title>
+    <app-text-equipe></app-text-equipe>
     <app-media-grid [items]="videosEquipe"> </app-media-grid>
   </section>
 </section>
 
 <section id="plaquette" class="section">
   <div class="container">
-    <app-section-title
-      title="Plaquettes"
-      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
-    >
-    </app-section-title>
-
+    <app-section-title title="Plaquettes"> </app-section-title>
+    <app-text-plaquette></app-text-plaquette>
     <app-couv-bts [visuals]="campaignVisuals"></app-couv-bts>
-
+    <app-text-plaquette-redaction></app-text-plaquette-redaction>
     <app-calameo-container [publications]="plaquettes"></app-calameo-container>
   </div>
 </section>
 
 <section id="site" class="section">
   <div class="container">
-    <app-section-title
-      title="Sites"
-      subtitle="Texte expliquant ce j'ai fait dessus où synthétisant la démarche"
-    >
-    </app-section-title>
+    <app-section-title title="Sites"> </app-section-title>
 
     <p>Sites internet</p>
   </div>
