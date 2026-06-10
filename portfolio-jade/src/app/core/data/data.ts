@@ -98,14 +98,22 @@ export const DOC_PLAQUETTE: MediaCardData[] = [
 
 export const PLAQUETTES: EditorialPublication[] = [
   {
+    title: "Plaquette Piano'cktail 2026-2027",
+    year: '2026',
+
+    calameoUrl: '//v.calameo.com/?bkcode=0000002690157cddcf0b6&mode=mini',
+
+    description: '',
+
+    reverse: true,
+  },
+  {
     title: "Plaquette Piano'cktail 2025-2026",
     year: '2025',
 
-    calameoUrl: 'https://www.calameo.com/read/007956311a7ecd2fbe4af',
+    calameoUrl: '//v.calameo.com/?bkcode=007956311a7ecd2fbe4af&mode=mini',
 
-    description:
-      // "Conception de la campagne visuelle, coiffure et maquillage du shooting photo, accompagnement artistique et valorisation de l'identité de saison.",
-      "Texte expliquant ce j'ai fait dessus où synthétisant la démarche",
+    description: '',
 
     reverse: false,
   },

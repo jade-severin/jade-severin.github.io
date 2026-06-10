@@ -1,7 +1,15 @@
 @for (publication of publications(); track publication.title) {
   <article class="publication" [class.reverse]="publication.reverse">
     <div class="publication-viewer">
-      <iframe [src]="publication.calameoUrl | safeUrl" loading="lazy" allowfullscreen> </iframe>
+      <iframe
+        [src]="publication.calameoUrl | safeUrl"
+        loading="lazy"
+        frameborder="0"
+        scrolling="no"
+        allowtransparency
+        allowfullscreen
+      >
+      </iframe>
     </div>
 
     <div class="publication-content">
